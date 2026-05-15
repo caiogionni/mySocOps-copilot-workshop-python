@@ -1,15 +1,19 @@
 <div id="game-container">
 <div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
     <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+        <!-- Sky background effect -->
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 50%, #90EE90 100%); z-index: -1;"></div>
+        
+        <h1 class="text-5xl font-bold text-amber-900 mb-2 pixel-text" style="text-transform: uppercase; letter-spacing: 2px;">⛏️ MINECRAFT BINGO</h1>
+        <p class="text-lg text-amber-800 mb-8 font-semibold" style="text-transform: uppercase; letter-spacing: 1px;">🎮 Social Mining Challenge</p>
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
+        <div class="crafting-panel p-6 mb-8" style="border-radius: 0; position: relative;">
+            <h2 class="font-semibold text-amber-900 mb-3 pixel-text" style="text-transform: uppercase; font-size: 1.25rem;">⚒️ How to Mine</h2>
+            <ul class="text-left text-amber-900 text-sm space-y-2">
+                <li>🔍 Find players who match the squares</li>
+                <li>✅ Tap a square when you find a match</li>
+                <li>🎯 Get 5 in a row to WIN the game!</li>
+                <li>💎 Collect blocks and become a legend</li>
             </ul>
         </div>
 
@@ -17,8 +21,9 @@
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
+            class="w-full bg-grass text-white font-bold py-4 px-8 text-lg active:bg-grass transition-all"
+            style="border-color: #558B2F; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem;">
+            ⛏️ START MINING
         </button>
     </div>
 </div>

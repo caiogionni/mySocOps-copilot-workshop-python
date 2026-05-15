@@ -1,15 +1,17 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="modal-overlay fixed inset-0 flex items-center justify-center p-4 z-50" style="background: rgba(0, 0, 0, 0.8);">
+    <div class="victory-banner p-6 max-w-xs w-full text-center animate-[bounce_0.5s_ease-out]" style="border-radius: 0;">
+        <div class="text-6xl mb-4" style="animation: bounce 0.5s ease-out 3;">⭐ 💎 ⭐</div>
+        <h2 class="text-4xl font-bold text-amber-900 mb-2 pixel-text" style="text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">VICTORY!</h2>
+        <p class="text-amber-900 mb-6 font-bold" style="text-transform: uppercase;">YOU COMPLETED A LINE!</p>
+        <p class="text-sm text-amber-800 mb-6">You've found precious ore and earned your reward!</p>
 
         <button
             hx-post="/dismiss-modal"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
-            Keep Playing
+            class="w-full bg-grass text-white font-bold py-3 px-6 active:bg-grass transition-all"
+            style="border: 3px solid #558B2F; text-transform: uppercase; letter-spacing: 1px;">
+            ⛏️ Keep Mining
         </button>
     </div>
 </div>

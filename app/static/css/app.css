@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 html,
 body,
 #app {
@@ -6,8 +8,10 @@ body,
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     -webkit-tap-highlight-color: transparent;
+    background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+    min-height: 100vh;
 }
 
 /* Tailwind-like utility classes */
@@ -51,25 +55,32 @@ body {
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 .bg-white { background-color: #ffffff; }
-.bg-gray-50 { background-color: #f9fafb; }
-.bg-gray-100 { background-color: #f3f4f6; }
-.bg-amber-100 { background-color: #fef3c7; }
-.bg-amber-200 { background-color: #fde68a; }
-.bg-accent { background-color: #2563eb; }
-.bg-marked { background-color: #dcfce7; }
+.bg-gray-50 { background-color: #C5B59F; }
+.bg-gray-100 { background-color: #8B7355; }
+.bg-amber-100 { background-color: #F4A460; }
+.bg-amber-200 { background-color: #FFD700; }
+.bg-accent { background-color: #7CB342; }
+.bg-marked { background-color: #90EE90; }
 .bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
 
+/* Minecraft-specific colors */
+.bg-dirt { background-color: #8B7355; }
+.bg-grass { background-color: #7CB342; }
+.bg-stone { background-color: #7F8B8B; }
+.bg-ore { background-color: #FFB90F; }
+.bg-wood { background-color: #8B6914; }
+
 .text-white { color: #ffffff; }
-.text-gray-500 { color: #6b7280; }
-.text-gray-600 { color: #4b5563; }
-.text-gray-700 { color: #374151; }
-.text-gray-800 { color: #1f2937; }
-.text-gray-900 { color: #111827; }
-.text-green-600 { color: #16a34a; }
-.text-green-800 { color: #166534; }
-.text-amber-500 { color: #f59e0b; }
-.text-amber-800 { color: #92400e; }
-.text-amber-900 { color: #78350f; }
+.text-gray-500 { color: #8B7355; }
+.text-gray-600 { color: #6B5344; }
+.text-gray-700 { color: #5A4630; }
+.text-gray-800 { color: #3C2415; }
+.text-gray-900 { color: #1a1a1a; }
+.text-green-600 { color: #7CB342; }
+.text-green-800 { color: #558B2F; }
+.text-amber-500 { color: #FFB90F; }
+.text-amber-800 { color: #CD8500; }
+.text-amber-900 { color: #8B4513; }
 
 .text-xs { font-size: 0.75rem; line-height: 1rem; }
 .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
@@ -84,19 +95,19 @@ body {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 
-.border { border-width: 1px; }
-.border-b { border-bottom-width: 1px; }
-.border-gray-200 { border-color: #e5e7eb; }
-.border-gray-300 { border-color: #d1d5db; }
-.border-amber-400 { border-color: #fbbf24; }
-.border-marked-border { border-color: #22c55e; }
+.border { border-width: 3px; border-style: solid; }
+.border-b { border-bottom-width: 3px; }
+.border-gray-200 { border-color: #6B5344; }
+.border-gray-300 { border-color: #5A4630; }
+.border-amber-400 { border-color: #FFB90F; }
+.border-marked-border { border-color: #558B2F; }
 
-.rounded { border-radius: 0.25rem; }
-.rounded-lg { border-radius: 0.5rem; }
-.rounded-xl { border-radius: 0.75rem; }
+.rounded { border-radius: 0px; }
+.rounded-lg { border-radius: 0px; }
+.rounded-xl { border-radius: 0px; }
 
-.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-sm { box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.3), inset -2px -2px 0px rgba(0, 0, 0, 0.5); }
+.shadow-xl { box-shadow: inset 3px 3px 0px rgba(255, 255, 255, 0.2), inset -3px -3px 0px rgba(0, 0, 0, 0.8), 4px 4px 0px rgba(0, 0, 0, 0.3); }
 
 .space-y-2 > * + * { margin-top: 0.5rem; }
 
@@ -160,4 +171,136 @@ button:disabled {
 
 .animate-\[bounce_0\.5s_ease-out\] {
     animation: bounce 0.5s ease-out;
+}
+
+/* ========== MINECRAFT THEME ========== */
+
+/* Blocky button styles */
+button {
+    cursor: pointer;
+    border: 3px solid;
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.1) 100%);
+    font: inherit;
+    position: relative;
+    transition: all 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(180deg, #8B6914 0%, #6B5310 100%);
+    border-bottom: 4px solid #3C2415;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Block break particle animation */
+@keyframes blockBreak {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) rotate(180deg) translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* Block placement animation */
+@keyframes blockPlace {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-place {
+    animation: blockPlace 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Bingo board container */
+#game-container {
+    background: linear-gradient(135deg, #87CEEB 0%, #E0F6FF 100%);
+}
+
+/* Start screen crafting table aesthetic */
+.crafting-panel {
+    background: linear-gradient(135deg, #8B6914 0%, #6B5310 100%);
+    border: 4px solid #3C2415;
+    box-shadow: inset 0 0 0 2px #CD8500, 0 8px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.crafting-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Ore block highlight */
+.ore-glow {
+    box-shadow: inset 0 0 12px rgba(255, 217, 0, 0.6);
+}
+
+/* Victory modal styling */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+}
+
+.victory-banner {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    border: 6px solid #CD8500;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255,255,255,0.4);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Marked square glow */
+.marked-square {
+    position: relative;
+    animation: markedGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes markedGlow {
+    0%, 100% {
+        box-shadow: inset 0 0 0 rgba(124, 179, 66, 0.5);
+    }
+    50% {
+        box-shadow: inset 0 0 12px rgba(124, 179, 66, 0.8);
+    }
+}
+
+/* Pixelated text shadow for titles */
+.pixel-text {
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.5),
+        4px 4px 0 rgba(0, 0, 0, 0.3);
 }
